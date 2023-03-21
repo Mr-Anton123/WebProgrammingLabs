@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+
+</mat-toolbar>
+<div class="content" style="height:1000px;">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid" >
+    <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%"
+         infinite-scroll
+         [infiniteScrollDistance]="2"
+         [infiniteScrollThrottle]="100"
+         (scrolled)="onScroll()"
+         *ngFor="let fake of projects">
+         <div class="card">
+          <div>
+            <p>Id: {{fake.id}}</p>
+            <p>Title: {{fake.title}}</p>
+            <p>Canegory: {{fake.category}}</p>
+            <p>Price: {{fake.price}}</p>
+            <p>Description: {{fake.description}}</p>
+            <img src="{{fake.image}}" class="image" >
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
